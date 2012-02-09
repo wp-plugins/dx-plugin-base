@@ -1,4 +1,4 @@
-= DX Plugin Base ===
+=== DX Plugin Base ===
 Contributors: nofearinc
 Tags: plugin, base, startup, skeleton, stub
 Requires at least: 3.1
