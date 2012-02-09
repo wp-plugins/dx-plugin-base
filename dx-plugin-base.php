@@ -9,7 +9,7 @@
  * 
  * Author: nofearinc
  * Author URI: http://devwp.eu/
- * Version: 0.2a
+ * Version: 0.3a
  * Text Domain: dx-sample-plugin
  * License: GPL2
 

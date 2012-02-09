@@ -3,13 +3,10 @@ Contributors: nofearinc
 Tags: plugin, base, startup, skeleton, stub
 Requires at least: 3.1
 Tested up to: 3.3.1
-Stable tag: 0.2a
+Stable tag: 0.3a
 License: GPLv2 or later
 
-This is a sample skeleton plugin for plugin developers. 
-
-It serves as a startup code providing reference and working codebase for custom post type and taxonomies, creating admin pages,
-registration of activate/deactivate hooks and more. Use it freely as your plugin startup snippet. 
+Startup plugin code for new plugin, including the archetype of standard features, admin and core functions to be used in new plugins.
 
 == Description ==
 
