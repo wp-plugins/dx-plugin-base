@@ -2,11 +2,6 @@
 /**
  * Plugin Name: DX Plugin Base
  * Plugin URI: http://example.org/
- * Description: This is a sample skeleton plugin for plugin developers. 
- *
- * It serves as a startup code providing reference and working codebase for custom post type and taxonomies, creating admin pages,
- * registration of activate/deactivate hooks and more. Use it freely as your plugin startup snippet.
- * 
  * Author: nofearinc
  * Author URI: http://devwp.eu/
  * Version: 0.3a
