@@ -2,8 +2,8 @@
 Contributors: nofearinc
 Tags: plugin, base, startup, skeleton, stub
 Requires at least: 3.1
-Tested up to: 3.3.1
-Stable tag: 0.3a
+Tested up to: 3.4.2
+Stable tag: 1.0
 License: GPLv2 or later
 
 Startup plugin code for new plugin, including the archetype of standard features, admin and core functions to be used in new plugins.
@@ -23,3 +23,11 @@ widget and shortcode samples.
 Upload the DX Plugin Base plugin to your blog and activate it. It would work as is.
 
 Extend or comment whenever appropriate based on your assignment. 
+
+== FAQ ==
+
+= Is it compatible with latest WordPress? =
+
+Yes, it is, as well as with the latest PHP. 
+
+I've removed the 'pass-by-reference' call for all array( $this, ... ) entries as it's deprecated since 5.3.0. If you happen to use 5.2.4, you can replace all $this in arrays with &$this or better update PHP version.
