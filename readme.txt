@@ -13,6 +13,7 @@ Startup plugin code for new plugin, including the archetype of standard features
 This is a sample skeleton plugin for plugin developers. 
 
 It serves as a startup code providing reference and working codebase for:
+
 * defining custom post types and taxonomies
 * creating admin pages
 * sample code of the Settings API implementation for admin pages
