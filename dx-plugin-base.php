@@ -4,7 +4,7 @@
  * Plugin URI: http://example.org/
  * Author: nofearinc
  * Author URI: http://devwp.eu/
- * Version: 1.0
+ * Version: 1.1
  * Text Domain: dx-sample-plugin
  * License: GPL2
 
@@ -29,7 +29,7 @@
  * 
  */
 
-define( 'DXP_VERSION', '1.0' );
+define( 'DXP_VERSION', '1.1' );
 define( 'DXP_PATH', dirname( __FILE__ ) );
 define( 'DXP_PATH_INCLUDES', dirname( __FILE__ ) . '/inc' );
 define( 'DXP_FOLDER', basename( DXP_PATH ) );
@@ -77,11 +77,18 @@ class DX_Plugin_Base {
 		// Add earlier execution as it needs to occur before admin page display
 		add_action( 'admin_init', array( $this, 'dx_register_settings' ), 5 );
 		
-		/* 
-		$this->dx_add_widgets();
-		$this->dx_add_shortcodes(); */
+		// Add a sample shortcode
+		add_action( 'init', array( $this, 'dx_sample_shortcode' ) );
 		
-		 
+		// Add a sample widget
+		add_action( 'widgets_init', array( $this, 'dx_sample_widget' ) );
+		
+		/*
+		 * TODO:
+		 * 		AJAX calls
+		 * 		HTTP request
+		 * 		template_redirect
+		 */
 		
 		// TODO: add some filters so that this may not be edited at all but hooked instead
 	}	
@@ -311,6 +318,35 @@ class DX_Plugin_Base {
 	function dx_register_settings() {
 		require_once( DXP_PATH . '/dx-plugin-settings.class.php' );
 		new DX_Plugin_Settings();
+	}
+	
+	/**
+	 * Register a sample shortcode to be used
+	 * 
+	 * First parameter is the shortcode name, would be used like: [dxsampcode]
+	 * 
+	 */
+	function dx_sample_shortcode() {
+		add_shortcode( 'dxsampcode', array( $this, 'dx_sample_shortcode_body' ) );
+	}
+	
+	/**
+	 * Returns the content of the sample shortcode, like [dxsamplcode]
+	 * @param array $attr arguments passed to array, like [dxsamcode attr1="one" attr2="two"]
+	 * @param string $content optional, could be used for a content to be wrapped, such as [dxsamcode]somecontnet[/dxsamcode]
+	 */
+	function dx_sample_shortcode_body( $attr, $content = null ) {
+		/*
+		 * Manage the attributes and the content as per your request and return the result
+		 */
+		return __( 'Sample Output', 'dxbase');
+	}
+	
+	/**
+	 * Hook for including a sample widget with options
+	 */
+	function dx_sample_widget() {
+		include_once DXP_PATH_INCLUDES . '/dx-sample-widget.class.php';
 	}
 	
 }
