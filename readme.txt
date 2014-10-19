@@ -46,6 +46,10 @@ Yes, it is, as well as with the latest PHP.
 
 == Changelog ==
 
+= 1.5 =
+* Add custom fields to metaboxes
+* Save custom fields
+
 = 1.4 =
 * Refreshing
 
