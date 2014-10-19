@@ -2,8 +2,8 @@
 Contributors: nofearinc, devrix
 Tags: plugin, base, startup, skeleton, stub, foundation, backbone, sample, example
 Requires at least: 3.1
-Tested up to: 3.9.1
-Stable tag: 1.4
+Tested up to: 4.0
+Stable tag: 1.5
 License: GPLv2 or later
 
 Startup plugin code for new plugin, including the archetype of standard features, admin and core functions to be used in new plugins.
