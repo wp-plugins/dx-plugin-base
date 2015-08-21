@@ -1,10 +1,11 @@
 <?php
 /**
  * Plugin Name: DX Plugin Base
+ * Description: A plugin framework for building new WordPress plugins reusing the accepted APIs and best practices
  * Plugin URI: http://example.org/
  * Author: nofearinc
  * Author URI: http://devwp.eu/
- * Version: 1.5
+ * Version: 1.6
  * Text Domain: dx-sample-plugin
  * License: GPL2
 
@@ -29,7 +30,7 @@
  * 
  */
 
-define( 'DXP_VERSION', '1.5' );
+define( 'DXP_VERSION', '1.6' );
 define( 'DXP_PATH', dirname( __FILE__ ) );
 define( 'DXP_PATH_INCLUDES', dirname( __FILE__ ) . '/inc' );
 define( 'DXP_FOLDER', basename( DXP_PATH ) );
@@ -124,7 +125,7 @@ class DX_Plugin_Base {
 	 * Loading existing scripts from wp-includes or adding custom ones
 	 *
 	 */
-	public function dx_add_admin_JS() {
+	public function dx_add_admin_JS( $hook ) {
 		wp_enqueue_script( 'jquery' );
 		wp_register_script( 'samplescript-admin', plugins_url( '/js/samplescript-admin.js' , __FILE__ ), array('jquery'), '1.0', true );
 		wp_enqueue_script( 'samplescript-admin' );
@@ -174,7 +175,7 @@ class DX_Plugin_Base {
 	 * 
 	 */
 	public function dx_plugin_base() {
-		include_once( DXP_PATH . '/help-page.php' );
+		include_once( DXP_PATH_INCLUDES . '/base-page-template.php' );
 	}
 	
 	public function dx_plugin_side_access_page() {
@@ -257,7 +258,7 @@ class DX_Plugin_Base {
 
 		$slug = 'pluginbase';
 		// If this isn't a 'book' post, don't update it.
-                if ( ! isset( $_POST['post_type'] ) || $slug != $_POST['post_type'] ) {
+		if ( ! isset( $_POST['post_type'] ) || $slug != $_POST['post_type'] ) {
 			return;
 		}
 		
